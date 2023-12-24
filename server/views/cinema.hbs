@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .carousel-inner img{
+      width:100%;
+      height:auto;
+      max-width:100%;
+      object-fit: contain;
+      max-height: 350px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div style="text-align:center;">
+    <h1>PVK Cinemas</h1>
+  </div>
+
+<div >
+  <div >
+    <div style="margin-top:20px ;margin-bottom:20px;">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" >
+          <div class="carousel-item active">
+            <img src="https://th.bing.com/th/id/OIF.jOmZPUW5tXyNrpo7wiihcg?rs=1&pid=ImgDetMain" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.thequint.com/thequint/2021-01/7c7552bd-6cd2-4c74-8683-b8d3b208374b/RRR.jpeg?rect=0%2C113%2C4096%2C2304&auto=format%2Ccompress&fmt=webp" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.ytimg.com/vi/5X_yo8HNPco/maxresdefault.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+  <div class="container" style="display: flex;align-items:center;justify-content:center;">
+    <div>
+      <label>Select Cinema:</label>
+
+      <select name="form-control" id="movie">
+        {{#each movies}}
+        <option value="{{rate}}">{{name}}/screen{{screenNo}}-Rs{{rate}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <ul class="showcase" style="list-style-type:none ;margin:50px;margin: top 100px;display:flex;">
+      <li style="text-align: center;">
+        <div class="seat" style="margin: 15px;"></div>
+        <small>AVAILABLE</small>
+      </li>
+      <li style="text-align: center;">
+        <div class="seat selected" style="margin: 15px;"></div>
+        <small>Selected</small>
+      </li>
+      <li style="text-align: center;">
+        <div class="seat occupied" style="margin:15px"></div>
+        <small>Occupied</small>
+      </li>
+    </ul>
+    <div style="width: 350px;">
+      <div class="screen"></div>
+      <div class="row" id="screen1" style="visibility: none;display:none">
+        {{#each screen1}}
+        <div class="seat {{status}}" id="{{seatno}}"></div>
+        {{/each}}
+      </div>
+      <div class="row" id="screen2" style="visibility: none;display:none;">
+        {{#each screen2}}
+        <div class="seat {{status}}" id="{{seatno}}"></div>
+        {{/each}}
+      </div>
+      <div class="row" id="screen3" style="visibility: none; display:none;">
+        {{#each screen3}}
+        <div class="seat {{status}}" id="{{seatno}}"></div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div id="finalCost" style="display: none;visibility:hidden;text-align:center">
+    <p id="cost"></p>
+  </div>
+
+
+  <script src="script.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
